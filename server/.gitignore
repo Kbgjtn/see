@@ -1,0 +1,60 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+.npm
+
+# Testing
+coverage
+
+# Production
+lib
+
+# Misc
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Logging
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+logs
+
+# IDE
+.idea
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Lint
+.eslintcache
+
+# App data
+.docker
+.docker/docker-compose.yml
+
+.env
+node_modules
+.vscode
+coverage
+lib
+.commitlintrc*
+.docker
+.DS_Store
+.editorconfig
+.eslintcache
+.eslintignore
+.eslintrc*
+.nycrc
+.prettierrc*
+.travis.yml
+*.log
+*.env
+*.env.*
+coverage
+README.md
+test

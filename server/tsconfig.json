@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "ES2020",
+    "lib": ["ES2020", "ES2021.String"],
+
+    /* Modules */
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "rootDirs": ["./src", "./tests"],
+    "outDir": "./lib",
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"]
+    },
+    "types": ["node", "jest"],
+    "removeComments": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "listEmittedFiles": false,
+    "listFiles": false,
+    "resolveJsonModule": true,
+    "traceResolution": false,
+
+    /* Type Checking */
+    "strict": true,
+    "alwaysStrict": true,
+    "strictPropertyInitialization": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
+    "allowJs": false,
+
+    /* Linter Checking */
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "sourceMap": true,
+    "pretty": true,
+
+    /* Completeness */
+    "skipLibCheck": true
+  },
+  "include": ["./src/**/*.ts", "./test/**/*.ts"],
+  "compileOnSave": false,
+  "exclude": ["tests", "lib", "node_modules"]
+}
