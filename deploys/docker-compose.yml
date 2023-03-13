@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  mongo1:
+    container_name: mongo1
+    image: mongo:5.0.5
+    volumes:
+      - ./scripts/replica-set-init.sh:/scripts/replica-set-init.sh
+      - ./scripts/init.js:/scripts/init.js
+    networks:
+      - mongo-cluster-network
+    ports:
+      - 27017:27017
+    depends_on:
+      - mongo2
+      - mongo3
+    links:
+      - mongo2
+      - mongo3
+    restart: always
+    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "cluster-dbrs" ]
+
+  mongo2:
+    container_name: mongo2
+    image: mongo:5.0.5
+    networks:
+      - mongo-cluster-network
+    ports:
+      - 27018:27017
+    restart: always
+    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "cluster-dbrs" ]
+  mongo3:
+    container_name: mongo3
+    image: mongo:5.0.5
+    networks:
+      - mongo-cluster-network
+    ports:
+      - 27019:27017
+    restart: always
+    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "cluster-dbrs" ]
+
+networks:
+  mongo-cluster-network:
+    driver: bridge

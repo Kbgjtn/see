@@ -1,0 +1,15 @@
+.docker
+docker
+docker.*
+coverage
+dist
+lib
+logs
+node_modules
+package-lock.json
+package.json
+yarn.lock
+*.env
+.gitignore
+*.html
+.prettierignore

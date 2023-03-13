@@ -1,0 +1,36 @@
+#!/bin/bash
+
+DELAY=25
+
+mongo <<EOF
+var config = {
+    "_id": "cluster-dbrs",
+    "version": 1,
+    "members": [
+        {
+            "_id": 1,
+            "host": "mongo1:27017",
+            "priority": 2,
+        },
+        {
+            "_id": 2,
+            "host": "mongo2:27017",
+            "priority": 1,
+        },
+        {
+            "_id": 3,
+            "host": "mongo3:27017",
+            "priority": 1,
+
+        }
+    ],
+};
+rs.initiate(config, { force: true });
+EOF
+
+echo "Delay: ${DELAY} seconds to get ready replicaset configuration"
+
+
+sleep $DELAY
+
+mongo < /scripts/init.js

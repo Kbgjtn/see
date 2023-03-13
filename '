@@ -1,0 +1,31 @@
+import {
+	CreateOnePhotoMetadataUseCase,
+	DeletePhotoMetadataUseCase,
+} from "../inteface/inteface.photo";
+import { PhotoMetadataRequestModel } from "../model/model.photo";
+
+export class CreatePhotoMetadata implements CreateOnePhotoMetadataUseCase {
+	photoMetadataRepository: photoMetadataRepository;
+
+	async execute(photoMetadata: PhotoMetadataRequestModel): Promise<void> {
+		return await this.photoMetadataRepository.CreatePhotoMetadata(
+			photoMetadata,
+		);
+	}
+}
+
+export class DeletePhotoMetadata implements DeletePhotoMetadataUseCase {
+	photoMetadataRepository: PhotoMetadataRepository;
+
+	async execute(id: string): Promise<void> {
+		return await this.photoMetadataRepository.delete(id);
+	}
+}
+
+export class DeletePhotoMetadata implements DeletePhotoMetadataUseCase {
+	photoMetadataRepository: PhotoMetadataRepository;
+
+	async execute(id: string): Promise<void> {
+		return await this.photoMetadataRepository.delete(id);
+	}
+}
